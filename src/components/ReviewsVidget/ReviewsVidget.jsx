@@ -1,14 +1,26 @@
 import React from "react";
+import Controls from "./Controls";
+import Statistics from "./Statistics";
+import { Container } from './ReviewsVidget.styled.jsx'
 
 class ReviewsVidget extends React.Component {
+
+    state = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+    }
+
     render() {
         return (
-            <div>
-                <h2>Please leave feadback</h2>
-                <button type='butoon'>Good</button>
-                <button type='butoon'>Neutural</button>
-                <button type='butoon'>Bad</button>
-            </div>
+            <Container className="Container">
+                <Controls
+                    title="Please leave feadback"
+                />
+                <Statistics
+                    title="Statistics" />
+            </Container>
+
         )
     }
 }
