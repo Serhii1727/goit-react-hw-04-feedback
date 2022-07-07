@@ -19,4 +19,7 @@ export default Controls;
 
 Controls.propTypes = {
     title: PropTypes.string.isRequired,
+    onControlGood: PropTypes.func,
+    onControlNeutural: PropTypes.func,
+    onControlBad: PropTypes.func,
 }

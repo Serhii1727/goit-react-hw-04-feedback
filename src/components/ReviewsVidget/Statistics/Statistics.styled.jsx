@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StatisticsContainer = styled.div`
-    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
 `
 
 export const StatisticsTitle = styled.div`

@@ -17,6 +17,8 @@ class ReviewsVidget extends React.Component {
         bad: this.props.initialValueFeedbackBad,
     }
 
+
+
     controlGood = () => {
         this.setState(prevState => ({
             good: prevState.good + 1
@@ -35,6 +37,14 @@ class ReviewsVidget extends React.Component {
         }))
     }
 
+    countTotalFeedback = () => {
+        return this.state.good + this.state.neutral + this.state.bad
+    }
+
+    countPositiveFeedbackPercentage = () => {
+        //return ((this.state.good + this.state.neutral + this.state.bad)) 
+    }
+
     render() {
         return (
             <Container className="Container">
@@ -50,6 +60,8 @@ class ReviewsVidget extends React.Component {
                     statisticsGood={this.state.good}
                     statisticsNeutral={this.state.neutral}
                     statisticsBad={this.state.bad}
+                    totalFeedback={this.countTotalFeedback}
+                    positiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
                 />
 
             </Container>
