@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import Notification from './Notification';
 import { StatisticsContainer } from './Statistics.styled';
+
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     return (
