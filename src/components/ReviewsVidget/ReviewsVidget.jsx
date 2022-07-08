@@ -1,6 +1,7 @@
 import React from "react";
-import Controls from "./Controls";
+import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Statistics from "./Statistics";
+import Section from "./Section";
 import { Container } from './ReviewsVidget.styled.jsx'
 
 class ReviewsVidget extends React.Component {
@@ -49,21 +50,24 @@ class ReviewsVidget extends React.Component {
     render() {
         return (
             <Container className="Container">
-                <Controls
-                    title="Please leave feadback"
-                    onControlGood={this.controlGood}
-                    onControlNeutural={this.controlNeutral}
-                    onControlBad={this.controlBad}
-                />
+                <Section title="Please leave feadback">
+                    <FeedbackOptions
+                        onControlGood={this.controlGood}
+                        onControlNeutural={this.controlNeutral}
+                        onControlBad={this.controlBad}
+                    />
+                </Section>
 
-                <Statistics
-                    title="Statistics"
-                    statisticsGood={this.state.good}
-                    statisticsNeutral={this.state.neutral}
-                    statisticsBad={this.state.bad}
-                    totalFeedback={this.countTotalFeedback}
-                    positiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
-                />
+                <Section title="Statistics">
+                    <Statistics
+                        good={this.state.good}
+                        neutral={this.state.neutral}
+                        bad={this.state.bad}
+                        total={this.countTotalFeedback}
+                        positivePercentage={this.countPositiveFeedbackPercentage}
+                    />
+                </Section>
+
 
             </Container>
 

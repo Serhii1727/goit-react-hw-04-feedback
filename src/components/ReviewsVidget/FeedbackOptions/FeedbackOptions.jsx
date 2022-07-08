@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { Feedback, Title, ButtonsContainer } from './Controls.styled';
+import { Feedback, ButtonsContainer } from './FeedbackOptions.styled';
 
-const Controls = ({ title, onControlGood, onControlNeutural, onControlBad }) => {
+const FeedbackOptions = ({ onControlGood, onControlNeutural, onControlBad }) => {
     return (
         <Feedback className="Feedback">
-            <Title className='Title'>{title}</Title>
             <ButtonsContainer className='Buttons-container'>
                 <button className='button-good' type='butoon' onClick={onControlGood}>Good</button>
                 <button className='button-neutural' type='butoon' onClick={onControlNeutural}>Neutural</button>
@@ -15,10 +14,9 @@ const Controls = ({ title, onControlGood, onControlNeutural, onControlBad }) => 
     )
 }
 
-export default Controls;
+export default FeedbackOptions;
 
-Controls.propTypes = {
-    title: PropTypes.string.isRequired,
+FeedbackOptions.propTypes = {
     onControlGood: PropTypes.func,
     onControlNeutural: PropTypes.func,
     onControlBad: PropTypes.func,

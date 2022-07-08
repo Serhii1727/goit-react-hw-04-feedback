@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
-import { StatisticsContainer, StatisticsTitle } from './Statistics.styled';
+import { StatisticsContainer } from './Statistics.styled';
 
-const Statistics = ({ title, statisticsGood, statisticsNeutral, statisticsBad, totalFeedback, positiveFeedbackPercentage }) => {
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     return (
         <StatisticsContainer className="Statistics-container">
-            <StatisticsTitle className='Title'>{title}</StatisticsTitle>
             <div>
-                <p>Good: {statisticsGood}</p>
-                <p>Neutral: {statisticsNeutral}</p>
-                <p>Bad: {statisticsBad}</p>
-                <p>Total: {totalFeedback()}</p>
-                <p>Positive feedback: {!statisticsGood ? 0 : positiveFeedbackPercentage()}%</p>
+                <p>Good: {good}</p>
+                <p>Neutral: {neutral}</p>
+                <p>Bad: {bad}</p>
+                <p>Total: {total()}</p>
+                <p>Positive feedback: {!good ? 0 : positivePercentage()}%</p>
             </div>
 
         </StatisticsContainer>
@@ -20,10 +19,9 @@ const Statistics = ({ title, statisticsGood, statisticsNeutral, statisticsBad, t
 export default Statistics;
 
 Statistics.propTypes = {
-    title: PropTypes.string.isRequired,
-    statisticsGood: PropTypes.number.isRequired,
-    statisticsNeutral: PropTypes.number.isRequired,
-    statisticsBad: PropTypes.number.isRequired,
-    totalFeedback: PropTypes.func.isRequired,
-    positiveFeedbackPercentage: PropTypes.func.isRequired,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.func.isRequired,
+    positivePercentage: PropTypes.func.isRequired,
 }

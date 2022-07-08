@@ -9,11 +9,6 @@ export const Feedback = styled.div`
     
 `
 
-export const Title = styled.h2`
-    margin: 0;
-    font-style: italic;
-`
-
 export const ButtonsContainer = styled.div`
     display: flex;
     justify-content: center;
