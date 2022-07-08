@@ -42,7 +42,8 @@ class ReviewsVidget extends React.Component {
     }
 
     countPositiveFeedbackPercentage = () => {
-        //return ((this.state.good + this.state.neutral + this.state.bad)) 
+        let percentage = this.state.good * 100 / (this.state.good + this.state.neutral + this.state.bad)
+        return percentage.toFixed(0)
     }
 
     render() {

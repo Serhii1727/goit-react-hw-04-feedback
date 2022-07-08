@@ -10,7 +10,7 @@ const Statistics = ({ title, statisticsGood, statisticsNeutral, statisticsBad, t
                 <p>Neutral: {statisticsNeutral}</p>
                 <p>Bad: {statisticsBad}</p>
                 <p>Total: {totalFeedback()}</p>
-                <p>Positive feedback: {positiveFeedbackPercentage()}%</p>
+                <p>Positive feedback: {!statisticsGood ? 0 : positiveFeedbackPercentage()}%</p>
             </div>
 
         </StatisticsContainer>
