@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Feedback = styled.div`
     margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     text-align: center;
     
     
