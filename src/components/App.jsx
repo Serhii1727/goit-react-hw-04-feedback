@@ -12,17 +12,19 @@ export function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const options = ["good", "neutral", "bad"];
+
   const handleChange = (e) => {
     const name = e.currentTarget.value;
     switch (name) {
       case "good":
-        setGood(good + 1)
+        setGood(prevState => prevState + 1)
         break;
       case "neutral":
-        setNeutral(neutral + 1)
+        setNeutral(prevState => prevState + 1)
         break;
       case "bad":
-        setBad(bad + 1)
+        setBad(prevState => prevState + 1)
         break;
 
       default:
@@ -42,7 +44,7 @@ export function App() {
     <Container className="Container">
       <Section title="Please leave feadback">
         <FeedbackOptions
-          options={["good", "neutral", "bad"]}
+          options={options}
           onLeaveFeedback={handleChange}
         />
       </Section>
